@@ -1,6 +1,4 @@
 [
   { "name": "Placebo", "price": 300, "size": "small", "id": 1 },
-  { "name": "Elixir", "price": 50, "size": "meduim", "id": 2 },
-  { "name": "Fendi", "price": 50, "size": "large", "id": 3 },
-  { "name": "Movado", "price": 10, "size": "meduim", "id": 4 }
+  { "name": "Elixir", "price": 50, "size": "meduim", "id": 2 }
 ]
