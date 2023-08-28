@@ -12,11 +12,11 @@ app.use("/users", usersRouter);
 //   res.status(200).send("This is the home page");
 // });
 
-// app.get("*", (req, res) => {
-//   res.status(404).json({
-//     message: "Page not found",
-//   });
-// });
+app.get("*", (req, res) => {
+  res.status(404).json({
+    message: "Page not found",
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on http://localhost:${port}`);

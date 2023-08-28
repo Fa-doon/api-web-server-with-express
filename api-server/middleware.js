@@ -19,19 +19,6 @@ const checkApi_key = (req, res, next) => {
   next();
 };
 
-const checkNormalUser = (req, res, next) => {
-  const file = fs.readFileSync("./db/users.json");
-  const userDb = JSON.parse(file);
-
-  const apiKey = req.headers.api_key;
-  const userFound = userDb.find((user) => user.api_key === apiKey);
-  if (userFound.user_type !== "user") {
-    return res.status(401).json({ message: `You are not authorized` });
-  }
-
-  next();
-};
-
 const checkAdmin = (req, res, next) => {
   const file = fs.readFileSync("./db/users.json");
   const userDb = JSON.parse(file);
@@ -40,10 +27,10 @@ const checkAdmin = (req, res, next) => {
 
   const userFound = userDb.find((user) => user.api_key === apiKey);
   if (userFound.user_type !== "admin") {
-    return res.status(401).json({ message: `You are not authorized` });
+    return res.status(403).json({ message: `You are not authorized` });
   }
 
   next();
 };
 
-module.exports = { checkApi_key, checkAdmin, checkNormalUser };
+module.exports = { checkApi_key, checkAdmin };

@@ -15,20 +15,10 @@ itemsRouter.post(
 );
 
 // Get all items
-itemsRouter.get(
-  "/",
-  globalMiddleware.checkApi_key,
-  globalMiddleware.checkNormalUser,
-  controller.getAllItems
-);
+itemsRouter.get("/", globalMiddleware.checkApi_key, controller.getAllItems);
 
 // Get one item
-itemsRouter.get(
-  "/:id",
-  globalMiddleware.checkApi_key,
-  globalMiddleware.checkNormalUser,
-  controller.getOneItem
-);
+itemsRouter.get("/:id", globalMiddleware.checkApi_key, controller.getOneItem);
 
 //Update an item
 itemsRouter.put(
